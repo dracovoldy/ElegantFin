@@ -14,7 +14,7 @@
     --elegantFinMediaBarBoxedHeight: 62vh;
     --elegantFinMediaBarBoxedMobileHeight: 64vh;
     --elegantFinMediaBarBoxedHomeGap: 1.25em;
-    --elegantFinMediaBarBoxedFlowOffset: calc(var(--appBarHeight) * 0.5);
+    --elegantFinMediaBarBoxedFlowOffset: calc(var(--appBarHeight) * 1.1);
 }
 
 html.jellyfin-v12-layout:not(.layout-mobile) {
@@ -126,15 +126,20 @@ html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .logo-container {
 }
 
 html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .detail-button {
-    order: 1;
-}
-
-html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .play-button {
     order: 2;
 }
 
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .play-button {
+    order: 1;
+}
+
 html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .favorite-button {
-    order: 3;
+    order: 2;
+}
+
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .bookmark-button,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .watchlist-button {
+    order: 0;
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {

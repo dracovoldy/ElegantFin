@@ -19,6 +19,59 @@
     order: 2;
 }
 
+.bookmark-button,
+.watchlist-button {
+    order: 0;
+}
+
+/* Restore ElegantFin's Media Bar button treatment over Jellyfin 12 defaults. */
+html.jellyfin-v12-shell #slides-container .button-container {
+    align-items: center;
+    gap: 1em;
+}
+
+html.jellyfin-v12-shell #slides-container .play-button {
+    background-color: var(--textColor);
+    border: var(--defaultLighterBorder);
+    border-color: var(--borderColor);
+    border-radius: 3em;
+    box-shadow: none;
+    color: var(--zeroContrastColor);
+    flex-direction: row;
+    height: 3em;
+    margin-right: 0.5em !important;
+    min-width: 10em;
+    padding: 0.5em !important;
+}
+
+html.jellyfin-v12-shell #slides-container .bookmark-button,
+html.jellyfin-v12-shell #slides-container .detail-button,
+html.jellyfin-v12-shell #slides-container .favorite-button,
+html.jellyfin-v12-shell #slides-container .watchlist-button {
+    align-items: center;
+    background: transparent;
+    border: var(--defaultLighterBorder);
+    border-color: transparent;
+    border-radius: 50%;
+    box-shadow: none;
+    color: var(--textColor);
+    display: flex;
+    height: 3.36em;
+    justify-content: center;
+    margin: 0.5em !important;
+    min-width: auto;
+    padding: 0.6em !important;
+    width: 3.36em;
+}
+
+html.layout-desktop.jellyfin-v12-shell #slides-container .bookmark-button:hover,
+html.layout-desktop.jellyfin-v12-shell #slides-container .detail-button:hover,
+html.layout-desktop.jellyfin-v12-shell #slides-container .favorite-button:hover,
+html.layout-desktop.jellyfin-v12-shell #slides-container .watchlist-button:hover {
+    background: var(--dimTextColor);
+    color: var(--zeroContrastColor);
+}
+
 .backdrop:not(.tmla-mask),
 .backdrop-container,
 .backdrop-overlay {
