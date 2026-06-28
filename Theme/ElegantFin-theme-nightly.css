@@ -364,6 +364,7 @@ select {
 .mediaSourceIndicator {
     background: rgb(31, 80, 189);
     border: var(--defaultLighterBorder);
+    color: white;
 }
 
 .layout-mobile .indicator {
