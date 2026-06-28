@@ -236,14 +236,14 @@ https://github.com/user-attachments/assets/ac22440d-39d7-48d6-a8da-3b7777372ffd
 <details>
   <summary><i>8. Enable boxed Media Bar layout on Jellyfin 12</i></summary>
 
-- If you use the Jellyfin 12 modern layout and want the Media Bar plugin to keep ElegantFin's boxed carousel treatment while idle, paste the following code right after the Media Bar plugin support import in the Custom CSS box, click save and finally refresh your app/webpage.
+- If you use the Jellyfin 12 modern layout and want the Media Bar plugin to keep ElegantFin's boxed carousel treatment, paste the following code right after the Media Bar plugin support import in the Custom CSS box, click save and finally refresh your app/webpage.
 
 ```
 	@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-boxed-latest-min.css");
 ```
 
 - Load this after `media-bar-plugin-support-latest-min.css`.
-- Active trailers automatically fall back to Media Bar's immersive Jellyfin 12 layout so trailer playback can keep its full-viewport experience.
+- Trailer playback stays inside ElegantFin's boxed shell while Media Bar's own Jellyfin 12 video and backdrop styling handles the active trailer.
 - To undo this change, simply remove this code block.
       </details>
 

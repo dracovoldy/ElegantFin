@@ -1,9 +1,9 @@
 /*! Add-on: Boxed Media Bar Plugin Support Nightly for the ElegantFin Theme for Jellyfin by lscambo13 */
 /*
  * Load after Media Bar's own Jellyfin 12 stylesheet.
- * The add-on boxes the idle/static MediaBar only. When a trailer becomes active,
- * MediaBar's immersive v12 geometry and masks are restored so playback can use
- * the full viewport experience.
+ * The add-on keeps the Media Bar inside ElegantFin's boxed shell, including
+ * during trailer playback. Trailer internals intentionally stay owned by
+ * Media Bar's v12 CSS and are clipped by the boxed container.
  */
 
 :root {
@@ -13,7 +13,7 @@
     --elegantFinMediaBarBoxedHomeGap: 2em;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) {
+.jellyfin-v12-layout {
     --mb-v12-content-left: clamp(2rem, 4vw, 4.5rem);
     --mb-v12-home-row-top: calc(
         var(--elegantFinMediaBarBoxedTop) + var(--elegantFinMediaBarBoxedHeight) +
@@ -21,12 +21,7 @@
     );
 }
 
-.jellyfin-v12-layout:has(#slides-container .video-container.active) {
-    --mb-v12-content-left: clamp(3rem, 5vw, 5.5rem);
-    --mb-v12-home-row-top: clamp(35.5rem, calc(50vh + 14.5rem), 50rem);
-}
-
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container {
+.jellyfin-v12-layout #slides-container {
     position: absolute;
     top: var(--elegantFinMediaBarBoxedTop);
     right: auto;
@@ -44,16 +39,16 @@
     box-shadow: var(--shadow);
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .slide,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .backdrop-container,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .backdrop,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .backdrop-overlay,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .gradient-overlay {
+.jellyfin-v12-layout #slides-container,
+.jellyfin-v12-layout #slides-container .slide,
+.jellyfin-v12-layout #slides-container .backdrop-container,
+.jellyfin-v12-layout #slides-container .backdrop,
+.jellyfin-v12-layout #slides-container .backdrop-overlay,
+.jellyfin-v12-layout #slides-container .gradient-overlay {
     border-radius: var(--largerRadius);
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .slide {
+.jellyfin-v12-layout #slides-container .slide {
     border: 0;
     overflow: hidden;
 }
@@ -89,38 +84,38 @@
     top: 1em !important;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .button-container,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .dots-container,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .plot-container,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .genre,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .info-container {
+.jellyfin-v12-layout #slides-container .button-container,
+.jellyfin-v12-layout #slides-container .dots-container,
+.jellyfin-v12-layout #slides-container .plot-container,
+.jellyfin-v12-layout #slides-container .genre,
+.jellyfin-v12-layout #slides-container .info-container {
     top: unset;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .button-container {
+.jellyfin-v12-layout #slides-container .button-container {
     bottom: 3em;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .dots-container {
+.jellyfin-v12-layout #slides-container .dots-container {
     bottom: 4.5em;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .plot-container,
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .plot-container.with-video {
+.jellyfin-v12-layout #slides-container .plot-container,
+.jellyfin-v12-layout #slides-container .plot-container.with-video {
     bottom: 7em;
     width: min(45%, 42rem);
     height: 4em;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .genre {
+.jellyfin-v12-layout #slides-container .genre {
     bottom: 12em;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .info-container {
+.jellyfin-v12-layout #slides-container .info-container {
     bottom: 14em;
 }
 
-.jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .logo-container {
+.jellyfin-v12-layout #slides-container .logo-container {
     top: 3%;
     align-items: flex-end;
     max-width: 35vw;
@@ -139,7 +134,7 @@
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
-    .jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) {
+    .jellyfin-v12-layout {
         --mb-v12-content-left: 50%;
         --mb-v12-home-row-top: calc(
             var(--elegantFinMediaBarBoxedTop) + var(--elegantFinMediaBarBoxedMobileHeight) +
@@ -147,7 +142,7 @@
         );
     }
 
-    .jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container {
+    .jellyfin-v12-layout #slides-container {
         top: var(--elegantFinMediaBarBoxedTop);
         left: var(--sidePadding);
         width: calc(100vw - (2 * var(--sidePadding)));
@@ -160,22 +155,22 @@
         display: none;
     }
 
-    .jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .button-container {
+    .jellyfin-v12-layout #slides-container .button-container {
         top: unset;
         bottom: 3em;
     }
 
-    .jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .dots-container {
+    .jellyfin-v12-layout #slides-container .dots-container {
         top: unset;
         bottom: 6em;
     }
 
-    .jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .info-container {
+    .jellyfin-v12-layout #slides-container .info-container {
         top: unset;
         bottom: 5em;
     }
 
-    .jellyfin-v12-layout:not(:has(#slides-container .video-container.active)) #slides-container .logo-container {
+    .jellyfin-v12-layout #slides-container .logo-container {
         top: calc(100% - 15em);
         max-width: none;
     }
