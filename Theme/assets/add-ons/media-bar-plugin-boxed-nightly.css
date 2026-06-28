@@ -14,7 +14,7 @@
     --elegantFinMediaBarBoxedHeight: 62vh;
     --elegantFinMediaBarBoxedMobileHeight: 64vh;
     --elegantFinMediaBarBoxedHomeGap: 1.25em;
-    --elegantFinMediaBarBoxedFlowOffset: calc(var(--appBarHeight) * 1.1);
+    --elegantFinMediaBarBoxedFlowOffset: 3em;
 }
 
 html.jellyfin-v12-layout:not(.layout-mobile) {
@@ -41,6 +41,13 @@ html.jellyfin-v12-layout:not(.layout-mobile) #slides-container {
     border: var(--defaultBorder);
     border-radius: var(--largerRadius);
     box-shadow: var(--shadow);
+}
+
+html.jellyfin-v12-layout:not(.layout-mobile) .homeSectionsContainer {
+    top: calc(
+        var(--elegantFinMediaBarBoxedTop) + var(--elegantFinMediaBarBoxedHeight) +
+            var(--elegantFinMediaBarBoxedHomeGap) - var(--elegantFinMediaBarBoxedFlowOffset)
+    ) !important;
 }
 
 html.jellyfin-v12-layout:not(.layout-mobile) #slides-container,

@@ -38,10 +38,15 @@ html.jellyfin-v12-shell #slides-container .play-button {
     box-shadow: none;
     color: var(--zeroContrastColor);
     flex-direction: row;
+    font-family: "Inter";
+    font-size: 1em;
+    font-weight: 500;
     height: 3em;
+    letter-spacing: normal;
     margin-right: 0.5em !important;
     min-width: 10em;
     padding: 0.5em !important;
+    transition: all 0.3s ease;
 }
 
 html.jellyfin-v12-shell #slides-container .bookmark-button,
@@ -61,6 +66,7 @@ html.jellyfin-v12-shell #slides-container .watchlist-button {
     margin: 0.5em !important;
     min-width: auto;
     padding: 0.6em !important;
+    transition: color 0.2s;
     width: 3.36em;
 }
 
@@ -69,7 +75,25 @@ html.layout-desktop.jellyfin-v12-shell #slides-container .detail-button:hover,
 html.layout-desktop.jellyfin-v12-shell #slides-container .favorite-button:hover,
 html.layout-desktop.jellyfin-v12-shell #slides-container .watchlist-button:hover {
     background: var(--dimTextColor);
+    border-color: transparent;
     color: var(--zeroContrastColor);
+    opacity: 0.8;
+    transform: none;
+}
+
+html.layout-desktop.jellyfin-v12-shell #slides-container .play-button:hover {
+    background: var(--textColor);
+    border-color: var(--borderColor);
+    color: var(--zeroContrastColor);
+    opacity: 0.8;
+    transform: none;
+}
+
+@media only screen and (max-height: 767px) and (orientation: landscape) {
+    html.jellyfin-v12-shell #slides-container .button-container {
+        transform: scale(0.85);
+        transform-origin: left center;
+    }
 }
 
 .backdrop:not(.tmla-mask),
