@@ -244,6 +244,7 @@ https://github.com/user-attachments/assets/ac22440d-39d7-48d6-a8da-3b7777372ffd
 
 - Load this after `media-bar-plugin-support-latest-min.css`.
 - Trailer playback stays inside ElegantFin's boxed shell while Media Bar's own Jellyfin 12 video and backdrop styling handles the active trailer.
+- Jellyfin mobile/legacy layouts keep using the original ElegantFin mobile Media Bar styling automatically.
 - To undo this change, simply remove this code block.
       </details>
 
