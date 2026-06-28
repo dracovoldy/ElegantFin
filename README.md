@@ -234,7 +234,20 @@ https://github.com/user-attachments/assets/ac22440d-39d7-48d6-a8da-3b7777372ffd
       </details>
 
 <details>
-  <summary><i>8. Switch between different app bar styles</i></summary>
+  <summary><i>8. Enable boxed Media Bar layout on Jellyfin 12</i></summary>
+
+- If you use the Jellyfin 12 modern layout and want the Media Bar plugin to keep ElegantFin's boxed carousel treatment, paste the following code right after the Media Bar plugin support import in the Custom CSS box, click save and finally refresh your app/webpage.
+
+```
+	@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-boxed-latest-min.css");
+```
+
+- Load this after `media-bar-plugin-support-latest-min.css`.
+- To undo this change, simply remove this code block.
+      </details>
+
+<details>
+  <summary><i>9. Switch between different app bar styles</i></summary>
 
 https://github.com/user-attachments/assets/b5868cd2-8df9-490d-a2b6-4386c6ddcd56
 

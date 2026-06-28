@@ -9,10 +9,12 @@
         "build:theme": "postcss ./Theme/ElegantFin-theme-nightly.css -o ./Theme/ElegantFin-jellyfin-theme-build-latest-minified.css",
         "build:covers-addon": "postcss ./Theme/assets/add-ons/custom-media-covers-nightly.css -o ./Theme/assets/add-ons/custom-media-covers-latest-min.css",
         "build:mediabar-addon": "postcss ./Theme/assets/add-ons/media-bar-plugin-support-nightly.css -o ./Theme/assets/add-ons/media-bar-plugin-support-latest-min.css",
-        "build:release": "npm run build:theme && npm run build:covers-addon && npm run build:mediabar-addon",
+        "build:mediabar-boxed-addon": "postcss ./Theme/assets/add-ons/media-bar-plugin-boxed-nightly.css -o ./Theme/assets/add-ons/media-bar-plugin-boxed-latest-min.css",
+        "build:release": "npm run build:theme && npm run build:covers-addon && npm run build:mediabar-addon && npm run build:mediabar-boxed-addon",
         "watch:theme": "postcss ./Theme/ElegantFin-theme-nightly.css -o ./Theme/ElegantFin-theme-nightly-min.css --watch --verbose",
         "watch:covers-addon": "postcss ./Theme/assets/add-ons/custom-media-covers-nightly.css -o ./Theme/assets/add-ons/custom-media-covers-nightly-min.css --watch --verbose",
         "watch:mediabar-addon": "postcss ./Theme/assets/add-ons/media-bar-plugin-support-nightly.css -o ./Theme/assets/add-ons/media-bar-plugin-support-nightly-min.css --watch --verbose",
+        "watch:mediabar-boxed-addon": "postcss ./Theme/assets/add-ons/media-bar-plugin-boxed-nightly.css -o ./Theme/assets/add-ons/media-bar-plugin-boxed-nightly-min.css --watch --verbose",
         "watch:fixes-addon": "postcss ./Theme/assets/add-ons/seamless-fork-compatibility-nightly.css -o ./Theme/assets/add-ons/seamless-fork-compatibility-nightly-min.css --watch --verbose"
     }
 }
