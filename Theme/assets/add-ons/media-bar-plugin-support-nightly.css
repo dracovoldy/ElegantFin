@@ -52,6 +52,20 @@
     overflow: visible;
 }
 
+html.layout-mobile.jellyfin-v12-shell #slides-container {
+    width: calc(100vw - (2 * var(--sidePadding)));
+    height: 62%;
+    top: calc(var(--appBarHeight) * 2 + 1.25em);
+    right: auto;
+    bottom: auto;
+    left: var(--sidePadding);
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    user-select: none;
+    z-index: auto;
+}
+
 .slide {
     border: var(--defaultBorder);
     border-radius: var(--largerRadius);
