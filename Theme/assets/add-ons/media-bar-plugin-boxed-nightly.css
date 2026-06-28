@@ -10,14 +10,15 @@
     --elegantFinMediaBarBoxedTop: calc(var(--appBarHeight) + 1.25em);
     --elegantFinMediaBarBoxedHeight: 62vh;
     --elegantFinMediaBarBoxedMobileHeight: 64vh;
-    --elegantFinMediaBarBoxedHomeGap: 2em;
+    --elegantFinMediaBarBoxedHomeGap: 1.25em;
+    --elegantFinMediaBarBoxedFlowOffset: calc(var(--appBarHeight) * 0.5);
 }
 
 .jellyfin-v12-layout {
     --mb-v12-content-left: clamp(2rem, 4vw, 4.5rem);
     --mb-v12-home-row-top: calc(
         var(--elegantFinMediaBarBoxedTop) + var(--elegantFinMediaBarBoxedHeight) +
-            var(--elegantFinMediaBarBoxedHomeGap)
+            var(--elegantFinMediaBarBoxedHomeGap) - var(--elegantFinMediaBarBoxedFlowOffset)
     );
 }
 
@@ -138,7 +139,7 @@
         --mb-v12-content-left: 50%;
         --mb-v12-home-row-top: calc(
             var(--elegantFinMediaBarBoxedTop) + var(--elegantFinMediaBarBoxedMobileHeight) +
-                var(--elegantFinMediaBarBoxedHomeGap)
+                var(--elegantFinMediaBarBoxedHomeGap) - var(--elegantFinMediaBarBoxedFlowOffset)
         );
     }
 
