@@ -17,7 +17,7 @@
     --elegantFinMediaBarBoxedFlowOffset: calc(var(--appBarHeight) * 0.5);
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) {
+html.jellyfin-v12-layout:not(.layout-mobile) {
     --mb-v12-content-left: clamp(2rem, 4vw, 4.5rem);
     --mb-v12-home-row-top: calc(
         var(--elegantFinMediaBarBoxedTop) + var(--elegantFinMediaBarBoxedHeight) +
@@ -25,7 +25,7 @@
     );
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container {
     position: absolute;
     top: var(--elegantFinMediaBarBoxedTop);
     right: auto;
@@ -43,34 +43,34 @@
     box-shadow: var(--shadow);
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .slide,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .backdrop-container,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .backdrop,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .backdrop-overlay,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .gradient-overlay {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .slide,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .backdrop-container,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .backdrop,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .backdrop-overlay,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .gradient-overlay {
     border-radius: var(--largerRadius);
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .slide {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .slide {
     border: 0;
     overflow: hidden;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop-container,
-.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop-overlay,
-.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .gradient-overlay {
+html.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop-container,
+html.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop-overlay,
+html.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .gradient-overlay {
     -webkit-mask-image: none;
     mask-image: none;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop {
+html.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop {
     width: 100%;
     height: 100%;
     object-position: center 20%;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .gradient-overlay {
+html.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .gradient-overlay {
     background: linear-gradient(
         37deg,
         rgb(0 0 0 / 0.2) 32%,
@@ -79,66 +79,66 @@
     );
 }
 
-.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop-overlay {
+html.jellyfin-v12-layout:not(.layout-mobile):not(:has(#slides-container .video-container.active)) #slides-container .backdrop-overlay {
     background: linear-gradient(0deg, rgb(0 0 0 / 0.85), 40%, transparent);
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .pause-button,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .volume-toggle {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .pause-button,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .volume-toggle {
     top: 1em !important;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .button-container,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .dots-container,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .genre,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .info-container {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .button-container,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .dots-container,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .genre,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .info-container {
     top: unset;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .button-container {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .button-container {
     bottom: 3em;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .dots-container {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .dots-container {
     bottom: 4.5em;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container,
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container.with-video {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container,
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container.with-video {
     bottom: 7em;
     width: min(45%, 42rem);
     height: 4em;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .genre {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .genre {
     bottom: 12em;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .info-container {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .info-container {
     bottom: 14em;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .logo-container {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .logo-container {
     top: 3%;
     align-items: flex-end;
     max-width: 35vw;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .detail-button {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .detail-button {
     order: 1;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .play-button {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .play-button {
     order: 2;
 }
 
-.jellyfin-v12-layout:not(.layout-mobile) #slides-container .favorite-button {
+html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .favorite-button {
     order: 3;
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
-    .jellyfin-v12-layout:not(.layout-mobile) {
+    html.jellyfin-v12-layout:not(.layout-mobile) {
         --mb-v12-content-left: 50%;
         --mb-v12-home-row-top: calc(
             var(--elegantFinMediaBarBoxedTop) + var(--elegantFinMediaBarBoxedMobileHeight) +
@@ -146,63 +146,63 @@
         );
     }
 
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container {
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container {
         top: var(--elegantFinMediaBarBoxedTop);
         left: var(--sidePadding);
         width: calc(100vw - (2 * var(--sidePadding)));
         height: var(--elegantFinMediaBarBoxedMobileHeight);
     }
 
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .tomato-rating,
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .genre,
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container {
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .tomato-rating,
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .genre,
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .plot-container {
         display: none;
     }
 
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .button-container {
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .button-container {
         top: unset;
         bottom: 3em;
     }
 
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .dots-container {
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .dots-container {
         top: unset;
         bottom: 6em;
     }
 
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .info-container {
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .info-container {
         top: unset;
         bottom: 5em;
     }
 
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .logo-container {
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .logo-container {
         top: calc(100% - 15em);
         max-width: none;
     }
 
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .left-arrow,
-    .jellyfin-v12-layout:not(.layout-mobile) #slides-container .right-arrow {
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .left-arrow,
+    html.jellyfin-v12-layout:not(.layout-mobile) #slides-container .right-arrow {
         display: none !important;
     }
 }
 
 @media (min-width: 75em) {
-    .jellyfin-v12-layout:not(.layout-mobile) {
+    html.jellyfin-v12-layout:not(.layout-mobile) {
         --elegantFinMediaBarBoxedTop: calc(var(--appBarHeight) + 1.25em);
     }
 
-    .layout-tv.jellyfin-v12-layout:not(.layout-mobile) {
+    html.layout-tv.jellyfin-v12-layout:not(.layout-mobile) {
         --elegantFinMediaBarBoxedTop: calc(var(--appBarHeight) * 2 + 1.25em);
     }
 }
 
 @media (min-width: 100em) {
-    .layout-tv.jellyfin-v12-layout:not(.layout-mobile) {
+    html.layout-tv.jellyfin-v12-layout:not(.layout-mobile) {
         --elegantFinMediaBarBoxedTop: calc(var(--appBarHeight) + 1.25em);
     }
 }
 
 @media only screen and (max-height: 767px) and (orientation: landscape) {
-    .jellyfin-v12-layout:not(.layout-mobile) {
+    html.jellyfin-v12-layout:not(.layout-mobile) {
         --elegantFinMediaBarBoxedHeight: 57vh;
     }
 }
